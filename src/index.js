@@ -42,8 +42,18 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let apiKey = "f61ab93bd3a752952443b3a7d6737cef";
-let city = "San Francisco";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "f61ab93bd3a752952443b3a7d6737cef";
 
-axios.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  //console.log(cityInputElement.value);
+  search(cityInputElement.value);
+}
+//control of html by js(forms info)
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
