@@ -24,7 +24,8 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
   console.log(response.data);
   let temeratureElement = document.querySelector("#temperature");
-  temeratureElement.innerHTML = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+  temeratureElement.innerHTML = Math.round(celciusTemperature);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
@@ -57,3 +58,32 @@ function handleSubmit(event) {
 //control of html by js(forms info)
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+//change from celcius to farenheit
+let celciusTemperature = null;
+function changeToFarenheit(event) {
+  event.preventDefault();
+  //remove active class to celcius link and remove active class from farenheit link
+  celciusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  let farenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", changeToFarenheit);
+
+//change from farenheit to celcius
+
+function changeToCelcius(event) {
+  event.preventDefault();
+  //remove active class to farenheit link and remove active class from celcius link
+  farenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", changeToCelcius);
+
+search("New York");
