@@ -64,3 +64,7 @@ li {
 .weather-temp .active:hover {
   text-decoration: none;
 }
+input.form-control {
+  background-color: paleturquoise;
+  color: aliceblue;
+}
