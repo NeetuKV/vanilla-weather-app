@@ -24,7 +24,7 @@
               <div class="col-10">
                 <input
                   type="search"
-                  placeholder="type a city.."
+                  placeholder="Enter a city.."
                   class="form-control"
                   id="city-input"
                   autocomplete="off"
@@ -35,18 +35,24 @@
               </div>
             </div>
           </form>
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li>Last Updated : <span id="date"> </span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
+          <hr />
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
+              <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                  <li>Last Updated : <span id="date"> </span></li>
+                  <li id="description"></li>
+                  <li>Humidity:<span id="humidity"></span> %</li>
+                  <li>Wind:<span id="wind"></span> m/hr</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-4">
               <div class="clearfix weather-temp">
                 <img src="" alt="clear" id="icon" class="float-left" />
-                <div class="float-left">
+                <div class="float-right">
                   <strong id="temperature">12</strong
                   ><span class="units"
                     ><a href="#" id="celcius-link" class="active">°C </a>|
@@ -55,10 +61,44 @@
                 </div>
               </div>
             </div>
-            <div class="col-6">
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-2">
               <ul>
-                <li>Humidity:<span id="humidity"></span> %</li>
-                <li>Wind:<span id="wind"></span> m/hr</li>
+                <li>Day</li>
+                <li>image</li>
+                <li>temp</li>
+              </ul>
+            </div>
+
+            <div class="col-2">
+              <ul>
+                <li>Day</li>
+                <li>image</li>
+                <li>temp</li>
+              </ul>
+            </div>
+
+            <div class="col-2">
+              <ul>
+                <li>Day</li>
+                <li>image</li>
+                <li>temp</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Day</li>
+                <li>image</li>
+                <li>temp</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Day</li>
+                <li>image</li>
+                <li>temp</li>
               </ul>
             </div>
           </div>
