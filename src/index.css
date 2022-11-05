@@ -68,3 +68,7 @@ input.form-control {
   background-color: paleturquoise;
   color: aliceblue;
 }
+.weather-forcast {
+  margin-top: 20px;
+  text-align: center;
+}
