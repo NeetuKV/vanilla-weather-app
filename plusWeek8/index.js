@@ -21,23 +21,7 @@ function formatDate(timestamp) {
   //calcuate date
   return `${day} ${hours}:${minutes}`;
 }
-function formatDate1(timestamp) {
-  //let date = new Date(timestamp);
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let today = new Date();
-  let day = today.getDay();
-  //calcuate date
-  let da = days[day];
-  return `${da}`;
-}
+
 function displayForcast() {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Mon", "Tue", "Wed"];
@@ -69,16 +53,7 @@ function displayTemperature(response) {
   let temeratureElement = document.querySelector("#temperature");
   celciusTemperature = response.data.main.temp;
   temeratureElement.innerHTML = Math.round(celciusTemperature);
-  let temp1Element = document.querySelector("#temp1");
-  temp1Element.innerHTML = Math.round(response.data.main.temp);
-  let temp2Element = document.querySelector("#temp2");
-  temp2Element.innerHTML = Math.round(response.data.main.temp);
-  let temp3Element = document.querySelector("#temp3");
-  temp3Element.innerHTML = Math.round(response.data.main.temp);
-  let temp4Element = document.querySelector("#temp4");
-  temp4Element.innerHTML = Math.round(response.data.main.temp);
-  let temp5Element = document.querySelector("#temp5");
-  temp5Element.innerHTML = Math.round(response.data.main.temp);
+
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
@@ -89,53 +64,13 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  let dateElement1 = document.querySelector("#date1");
-  dateElement1.innerHTML = formatDate1(response.data.dt * 1000);
-  let dateElement2 = document.querySelector("#date2");
-  dateElement2.innerHTML = formatDate1(response.data.dt * 1000);
-  let dateElement3 = document.querySelector("#date3");
-  dateElement3.innerHTML = formatDate1(response.data.dt * 1000);
-  let dateElement4 = document.querySelector("#date4");
-  dateElement4.innerHTML = formatDate1(response.data.dt * 1000);
-  let dateElement5 = document.querySelector("#date5");
-  dateElement5.innerHTML = formatDate1(response.data.dt * 1000);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  let iconElement1 = document.querySelector("#icon1");
-  iconElement1.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement1.setAttribute("alt", response.data.weather[0].description);
-  let iconElement2 = document.querySelector("#icon2");
-  iconElement2.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement2.setAttribute("alt", response.data.weather[0].description);
-  let iconElement3 = document.querySelector("#icon3");
-  iconElement3.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement3.setAttribute("alt", response.data.weather[0].description);
-  let iconElement4 = document.querySelector("#icon4");
-  iconElement4.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement4.setAttribute("alt", response.data.weather[0].description);
-  let iconElement5 = document.querySelector("#icon5");
-  iconElement5.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement5.setAttribute("alt", response.data.weather[0].description);
 }
 function search(city) {
   let apiKey = "f61ab93bd3a752952443b3a7d6737cef";
